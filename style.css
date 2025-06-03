@@ -190,6 +190,8 @@ body{
     justify-content: center;
     align-items: center;
     padding: 60px;
+    position: relative;
+    display: inline-block;
 
     & h4{
         font-size: 24px;
@@ -205,6 +207,22 @@ body{
         text-decoration: underline;
     }
 }
+.Features:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 2px;
+    background-color: #999;
+}
+.Features::before{
+    left: -50px;
+    
+}
+
+.Features::after{
+    right: -50px;
+}
 
 .featurebtn{
     text-align: center;
@@ -219,7 +237,7 @@ body{
     background-color: #fff;
     border: 1px solid #111;
     border-radius: 25px;
-    margin-bottom: 24px;
+    margin-bottom: 40px;
 }
 .featurebtn:hover{
     background-color: #111;
@@ -233,20 +251,37 @@ body{
 .buy-sell-container {
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 250px;
     padding: 40px;
+    position: relative;
+    
 }
 
 .buy-section {
     width: 500px;
     background: white;
     padding: 36px;
+    
+   
+}
+
+.buy-sell-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    bottom: 0;
+    background-color: #aaa;
+   transform: translateX(-50%);
+    width: 2px;
 }
 
 .sell-section {
      width: 500px;
     background: white;
     padding: 36px;
+    position: relative;
+    display: inline-block;
 
 }
 
